@@ -40,30 +40,3 @@ jobs:
           BRANCH: build # The branch name where you want to push the assets
           FOLDER: backend # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Railway CLI
-        run: npm install -g railway
-
-      - name: Check if build branch exists
-        run: |
-          if git show-ref --verify --quiet "refs/heads/build"; then
-            git checkout build
-          else
-            git checkout -b build
-          fi
-  
-
-      - name: Deploy from build branch
-        run: |
-          git checkout build
-          railway up
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
