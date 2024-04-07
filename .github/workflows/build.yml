@@ -21,7 +21,7 @@ jobs:
 
       - name: Copy built files to Backend
         run: |
-          cp -r frontend/build/* backend/build/
+          cp -r frontend/build/* backend/
 
       - name: Commit changes
         run: |
