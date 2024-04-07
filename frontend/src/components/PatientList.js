@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "./PatientList.css"
 import { FaRegRectangleXmark } from "react-icons/fa6";
 import { AiOutlineEdit, AiFillCheckSquare, AiOutlineCheckSquare } from "react-icons/ai";
@@ -6,7 +6,7 @@ import EditForm from './EditForm';
 import { HashLink } from 'react-router-hash-link';
 import axios from "axios"
 
-function PatientList({ fetchAllPatients, searchResultMessage, patients, setPatients, handleDelete, handleSearch }) {
+function PatientList({ fetchAllPatients, searchResultMessage, patients, setPatients, handleDelete }) {
 
 
     const [editingPatientId, setEditingPatientId] = useState(null);
@@ -19,7 +19,7 @@ function PatientList({ fetchAllPatients, searchResultMessage, patients, setPatie
         setEditingPatientId(null);
     };
 
-    const [checkedPatients, setCheckedPatients] = useState([]);
+
 
     const handleCheckToggle = async (patientId) => {
         // Find the patient by ID

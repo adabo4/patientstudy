@@ -1,6 +1,6 @@
 // SearchBar.js
 
-import React, { useState } from 'react';
+import React from 'react';
 import "./SearchBar.css"
 
 function SearchBar({ searchQuery, setSearchQuery, handleSearch }) {

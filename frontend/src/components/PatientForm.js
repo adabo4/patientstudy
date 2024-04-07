@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
-import PatientList from './PatientList';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import "./PatientForm.css"
@@ -20,6 +19,7 @@ function PatientForm() {
     });
 
     const [patients, setPatients] = useState([]);
+    console.log(patients)
 
     const navigate = useNavigate();
 
@@ -80,18 +80,7 @@ function PatientForm() {
 
 
 
-    const handleDelete = (patientId) => {
-        // Send a DELETE request to delete the patient by ID
-        axios.delete(`/patients/${patientId}`)
-            .then((response) => {
-                console.log(response.data);
-                // Remove the deleted patient from the local state
-                setPatients(patients.filter((patient) => patient._id !== patientId));
-            })
-            .catch((error) => {
-                console.error('Error deleting patient:', error);
-            });
-    };
+
 
 
     return (

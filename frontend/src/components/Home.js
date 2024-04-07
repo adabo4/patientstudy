@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import PatientList from './PatientList';
 import Navbar from './Navbar';
-import SearchBar from './SearchBar';
 
 export default function Home() {
     const [patients, setPatients] = useState([]);
