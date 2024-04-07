@@ -21,7 +21,7 @@ jobs:
 
       - name: Copy built files to Backend
         run: |
-          cp -r frontend/build/* backend/public/
+          cp -r frontend/build/* backend/
       
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -38,10 +38,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Railway CLI
-        run: npm install -g railway
+        run: npm install @railway/cli
 
-      - name: Login to Railway
-        run: railway login  # You might need to set up authentication with Railway here
-
-      - name: Deploy to Railway
-        run: railway up  # Adjust according to Railway's deployment commands
+      - name: Deploy
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
