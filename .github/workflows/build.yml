@@ -1,0 +1,47 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to match your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build Frontend
+        working-directory: frontend  # Navigate to the frontend folder
+        run: |
+          npm install
+          npm run build
+
+      - name: Copy built files to Backend
+        run: |
+          cp -r frontend/build/* backend/public/
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main  # Or your desired branch name
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Railway CLI
+        run: npm install -g railway
+
+      - name: Login to Railway
+        run: railway login  # You might need to set up authentication with Railway here
+
+      - name: Deploy to Railway
+        run: railway up  # Adjust according to Railway's deployment commands

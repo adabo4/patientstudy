@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+
+.patient-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid black;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.patient-container h2 {
+    margin-top: 1em;
+}
+
+.list-items {
+    display: flex;
+    max-width: 1150px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-top: 1em;
+
+}
+
+.card li {
+    border: 1px red solid;
+    margin: 10px;
+    list-style: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+
+
+}
+
+tr,
+td,
+th {
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: white;
+
+
+}
+
+tbody tr:hover {
+    background-color: rgba(31, 142, 206, 0.77);
+
+}
+
+tbody tr:last-child,
+table tr:last-child {
+    border-bottom: none;
+}
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    border-bottom: 1px solid #ddd;
+}
+
+
+table button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.icon {
+
+    font-size: 1.6em;
+}
+
+.error {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+
+}
+
+.highlighted {
+    color: red;
+}
+
+
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+    .list-items {
+        display: block;
+        padding: 0;
+        margin-top: 0;
+        border: none;
+
+
+    }
+
+    .patient-container {
+        display: block;
+    }
+
+    .patient-container h2 {
+        text-align: center;
+    }
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+
+
+
+    }
+
+
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 10px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+
+    }
+
+    /*
+	Label the data
+	*/
+    td:nth-of-type(1):before {
+        content: "Dátum a čas";
+
+    }
+
+    td:nth-of-type(2):before {
+        content: "Meno";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Priezvisko";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Rodné číslo";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Liek";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Dávka";
+    }
+
+    td:nth-of-type(7):before {
+        content: "Šarža";
+    }
+
+    td:nth-of-type(8):before {
+        content: "Počet";
+    }
+
+    td:nth-of-type(9):before {
+        content: "Vymazať";
+    }
+
+}
