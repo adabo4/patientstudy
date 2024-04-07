@@ -52,6 +52,15 @@ jobs:
       - name: Install Railway CLI
         run: npm install -g railway
 
+      - name: Check if build branch exists
+        run: |
+          if git show-ref --verify --quiet "refs/heads/build"; then
+            git checkout build
+          else
+            git checkout -b build
+          fi
+  
+
       - name: Deploy from build branch
         run: |
           git checkout build
