@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Adjust this to match your main branch name
+      - main 
 
 jobs:
   build:
@@ -39,4 +39,4 @@ jobs:
           REPO: self
           BRANCH: build # The branch name where you want to push the assets
           FOLDER: backend # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
