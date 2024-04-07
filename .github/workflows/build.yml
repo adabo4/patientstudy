@@ -19,9 +19,12 @@ jobs:
           npm install
           npm run build
 
+      - name: Create backend/build directory if it doesn't exist
+        run: mkdir -p backend/build 
+
       - name: Copy built files to Backend
         run: |
-          cp -r frontend/build/* backend/
+          cp -r frontend/build/* backend/build/
 
       - name: Commit changes
         run: |
