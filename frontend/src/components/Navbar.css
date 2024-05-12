@@ -1,6 +1,7 @@
 nav {
     background-color: rgb(24, 110, 160);
     height: 6em;
+    width: 100%;
 
 }
 
@@ -37,7 +38,11 @@ nav a {
     justify-self: flex-start;
 }
 
-@media only screen and (max-width: 760px),
+.hamburger-icon, .cross-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 768px),
 (min-device-width: 768px) and (max-device-width: 1024px) {
 
 
@@ -49,6 +54,41 @@ nav a {
 
     nav ul {
         justify-content: center;
+        flex-direction: column;
+      
+    }
+
+    .hamburger-icon {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        margin: 1em;
+
+
+    }
+
+     .cross-icon {
+        display: block;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2rem;
+        margin: 1em;
+
+    }
+
+    .nav-items.show {
+        background-color: rgb(24, 110, 160);
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+    } 
+
+    .nav-items.hide {
+        display: none;
+        
+        
     }
 
     nav a {

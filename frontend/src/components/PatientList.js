@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./PatientList.css";
 import { FaRegRectangleXmark } from "react-icons/fa6";
-import { GiHamburgerMenu } from "react-icons/gi";
 import {
   AiOutlineEdit,
   AiFillCheckSquare,

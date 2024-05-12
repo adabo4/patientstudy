@@ -26,7 +26,7 @@ function SearchBar({ searchQuery, setSearchQuery, handleSearch }) {
                         />
                     </div>
                 </div>
-                <li><button className='search-btn' onClick={handleSearch}>Hľadaj</button></li>
+                <button className='search-btn' onClick={handleSearch}>Hľadaj</button>
             </div>
 
         </>
