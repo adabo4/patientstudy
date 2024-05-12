@@ -21,7 +21,7 @@ export default function Navbar({ searchQuery, setSearchQuery, handleSearch, fetc
                     <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} handleSearch={handleSearch} />
                     <div className={`nav-items ${show ? 'show' : 'hide'}`} >
                         <ul>
-                            <li><Link to="/home" onClick={fetchAllPatients}>Domov</Link></li>
+                            <li><Link to="/home" onClick={{ toggleMenu, fetchAllPatients }}>Domov</Link></li>
                             <li><Link to="/add-patient" onClick={toggleMenu} >Pridaj pacienta</Link> </li>
                             <li><Link to="/" >Odhlás sa</Link> </li>
                         </ul>
