@@ -7,13 +7,13 @@ nav {
 nav ul {
     display: flex;
     justify-content: flex-end;
-
     align-items: center;
 }
 
 .nav-box {
     display: flex;
     justify-content: space-between;
+   
 }
 
 nav li {

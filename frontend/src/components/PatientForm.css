@@ -1,6 +1,6 @@
 .background {
     background-color: #44c4e791;
-    max-width: 1800px;
+    /* max-width: 1800px; */
     position: relative;
     min-height: 100vh;
 
@@ -15,13 +15,6 @@
     max-width: 500px;
     background-color: white;
     padding: 15px;
-
-
-
-
-
-
-
 }
 
 
