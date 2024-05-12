@@ -170,10 +170,6 @@ function PatientForm() {
 
                 </div>
 
-                <div>
-                    {new Date().getFullYear()}
-                </div>
-
             </div>
         </>
     );
