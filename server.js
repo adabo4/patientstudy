@@ -15,9 +15,9 @@ connectToDatabase();
 app.use(express.static(path.join(__dirname, 'build')));
 
 //Use the app in development mode
-// app.get("/", (req, res) => {
-//   res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
-// });
+//app.get("/", (req, res) => {
+// res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
+//});
 
 app.use("/patients", require("./routes/api"));
 app.use("/login", require("./routes/post"));
